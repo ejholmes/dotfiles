@@ -114,9 +114,11 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
+
 " Bubble single lines
 nmap <C-Up> [e
 nmap <C-Down> ]e
+
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
@@ -127,10 +129,10 @@ cmap w!! w !sudo tee % >/dev/null
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
 autocmd! bufwritepost .vimrc source ~/.vimrc
