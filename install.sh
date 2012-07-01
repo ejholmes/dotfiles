@@ -9,7 +9,7 @@ echo "Deleting the old files"
 # rm ~/.zshrc
 # rm ~/.vim
 # rm ~/.gvimrc
-# rm ~/.gitconfig
+rm ~/.gitconfig
 rm ~/.gitignore
 # rm ~/.tmux.conf
 
@@ -18,7 +18,7 @@ echo "Symlinking files"
 # ln -s ~/Source/dotfiles/zshrc ~/.zshrc
 # ln -s ~/Source/dotfiles/vim ~/.vim
 # ln -s ~/Source/dotfiles/gvimrc ~/.gvimrc
-# ln -s ~/Source/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/Source/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Source/dotfiles/gitignore ~/.gitignore
 # ln -s ~/Source/dotfiles/tmux ~/.tmux.conf
 

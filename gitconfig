@@ -1,0 +1,22 @@
+[alias]
+    export = !sh -c 'git diff $0 --name-only | "while read files; do mkdir -p \"$1/$(dirname $files)\"; cp -vf $files $1/$(dirname $files); done"'
+    changes = diff --name-status
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[user]
+    name = Eric J. Holmes
+    email = eric@ejholmes.net
+[color]
+    diff = auto
+    interactive = auto
+    status = auto
+    branch = auto
+[core]
+    quotepath = false
+    excludesfile = ~/.gitignore
+    editor = /usr/bin/vim
+[mergetool]
+    keepBackup = true
+[merge]
+    tool = opendiff
+[instaweb]
+    httpd = webrick
