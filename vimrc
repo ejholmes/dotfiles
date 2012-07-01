@@ -27,7 +27,8 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Townk/vim-autoclose'
 Bundle 'kusnier/vim-mediawiki'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
 syntax enable
@@ -157,10 +158,6 @@ if has("gui_running")
 else
 endif
 
-" Bundle 'scrooloose/nerdtree'
-let NERDTreeIgnore=['tags$', '\.elf$', '\.o$', '\.dll$', '\~$', '\.la$', '\.lo$']
-let NERDSpaceDelims = 1
-
 " Bundle 'scrooloose/nerdcommenter'
 nmap -- <plug>NERDCommenterToggle
 vmap -- <plug>NERDCommenterToggle
@@ -173,24 +170,6 @@ let g:NERDCustomDelimiters = {
 let g:snips_author = "Eric J. Holmes"
 let g:email = "eric@ejholmes.net"
 
-" Bundle 'kien/ctrlp.vim'
-let g:ctrlp_map = '<D-r>'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>', '<MiddleMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<c-m>', '<2-LeftMouse>'],
-    \ }
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|_site$\|\.sass-cache$\|cache$',
-  \ 'file': '\.exe$\|\.so$\|\.dll$\|\.gitignore',
-  \ 'link': 'bad_symbolic_link',
-  \ }
-
-" Bundle 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-
 " Bundle 'nelstrom/vim-markdown-preview'
 map <leader>p :Mm<cr>
 
@@ -199,32 +178,10 @@ map <leader>a= :Tabularize /=<cr>
 map <leader>a: :Tabularize /:<cr>
 map <leader>a> :Tabularize /=><cr>
 
-" Bundle 'mattn/zencoding-vim'
-let g:user_zen_settings = {
-  \  'html' : {
-  \    'indentation' : '    '
-  \  },
-  \}
-
-" For cucumber tables
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
 " Ruby
 let g:rails_menu = 2
 au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType ruby inoremap <C-l> <space>=><space>
-" au FileType ruby colorscheme railscasts
-" au FileType eruby colorscheme railscasts
 if has('gui_running')
     au FileType ruby set noballooneval
 endif
@@ -239,13 +196,9 @@ au FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " YAML
 au FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-au BufRead,BufCreate Packfile set filetype=yaml
 
 " ECO templates
 au FileType eco setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
-autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Bundle 'tsaleh/vim-matchit'
 runtime! macros/matchit.vim
@@ -254,22 +207,3 @@ runtime! macros/matchit.vim
 let g:Powerline_symbols='fancy'
 let g:Powerline_theme='skwp'
 let g:Powerline_colorscheme='skwp'
-
-" Solarized
-hi! link txtBold Identifier
-hi! link zshVariableDef Identifier
-hi! link zshFunction Function
-hi! link rubyControl Statement
-hi! link rspecGroupMethods rubyControl
-hi! link rspecMocks Identifier
-hi! link rspecKeywords Identifier
-hi! link rubyLocalVariableOrMethod Normal
-hi! link rubyStringDelimiter Constant
-hi! link rubyString Constant
-hi! link rubyAccess Todo
-hi! link rubySymbol Identifier
-hi! link rubyPseudoVariable Type
-hi! link rubyRailsARAssociationMethod Title
-hi! link rubyRailsARValidationMethod Title
-hi! link rubyRailsMethod Title
-hi! link MatchParen DiffText
