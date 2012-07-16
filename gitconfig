@@ -2,6 +2,9 @@
     export = !sh -c 'git diff $0 --name-only | "while read files; do mkdir -p \"$1/$(dirname $files)\"; cp -vf $files $1/$(dirname $files); done"'
     changes = diff --name-status
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+    ; Delete all local branches that have been merged into master
+    cleanup = !sh -c 'git branch --merged master | grep -v "master$" | xargs git branch -d'
 [user]
     name = Eric J. Holmes
     email = eric@ejholmes.net
