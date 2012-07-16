@@ -153,8 +153,8 @@ endif
 " GVIM
 if has("gui_running")
     " colorscheme basic
-    set background=dark
-    colorscheme solarized
+    set background=light
+    "colorscheme solarized
     set guioptions=egmt
     let loaded_minibufexplorer = 1
 else
