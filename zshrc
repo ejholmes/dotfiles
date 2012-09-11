@@ -1,5 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="lukerandall"
+ZSH_THEME="minimal"
 plugins=(git git-flow rails3 heroku rvm bundler)
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
