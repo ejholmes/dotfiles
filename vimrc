@@ -23,7 +23,6 @@ Bundle 'ingydotnet/yaml-vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-" vim-autoclose needs to be at 'b63af10' to work with vim-endwise
 Bundle 'Townk/vim-autoclose'
 Bundle 'kusnier/vim-mediawiki'
 Bundle 'Lokaltog/vim-powerline'
