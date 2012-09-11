@@ -142,7 +142,7 @@ if has("gui_macvim")
     nnoremap <tab> :tabnext<cr>
     nnoremap <s-tab> :tabprevious<cr>
     cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabe' : 'e')<cr>
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h16
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h14
     set linespace=3
 else
     nnoremap <tab> :bnext<cr>
@@ -152,9 +152,8 @@ endif
 
 " GVIM
 if has("gui_running")
-    " colorscheme basic
     set background=light
-    "colorscheme solarized
+    colorscheme torti
     set guioptions=egmt
     let loaded_minibufexplorer = 1
 else
@@ -182,7 +181,7 @@ map <leader>a> :Tabularize /=><cr>
 
 " Ruby
 let g:rails_menu = 2
-au FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au FileType ruby inoremap <C-l> <space>=><space>
 if has('gui_running')
     au FileType ruby set noballooneval
