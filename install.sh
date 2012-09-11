@@ -29,6 +29,6 @@ git submodule foreach git pull origin master --recurse-submodules
 
 echo "Installing Vundle"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim -s vim/install.vim
+vim -c "execute \"BundleInstall\" | q | q"
 
 echo "All done."
