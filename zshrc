@@ -25,6 +25,9 @@ alias rmds_store="find . -type f -name '.DS_Store' -exec rm {} \\;"
 # Alias z to zeus
 alias z="zeus"
 
+# Create new rails apps using rails-composer (https://github.com/RailsApps/rails-composer)
+alias rails_new="rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T"
+
 # tmux
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
