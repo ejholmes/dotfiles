@@ -28,6 +28,7 @@ Bundle 'kusnier/vim-mediawiki'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
+Bundle 'jpo/vim-railscasts-theme'
 
 filetype plugin indent on
 syntax enable
@@ -141,7 +142,7 @@ if has("gui_macvim")
     nnoremap <tab> :tabnext<cr>
     nnoremap <s-tab> :tabprevious<cr>
     cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabe' : 'e')<cr>
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+    set guifont=Source\ Code\ Pro:h14
     set linespace=3
 else
     nnoremap <tab> :bnext<cr>
@@ -152,7 +153,7 @@ endif
 " GVIM
 if has("gui_running")
     set background=light
-    colorscheme torti
+    colorscheme slate
     set guioptions=egmt
     let loaded_minibufexplorer = 1
 else
