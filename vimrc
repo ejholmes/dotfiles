@@ -29,6 +29,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'jpo/vim-railscasts-theme'
+Bundle 'b4winckler/vim-objc'
+Bundle 'oscarh/vimerl'
+Bundle 'digitaltoad/vim-jade'
 
 filetype plugin indent on
 syntax enable
@@ -200,6 +203,12 @@ au FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " ECO templates
 au FileType eco setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Jade templates
+au FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" JavaScript
+au FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Bundle 'tsaleh/vim-matchit'
 runtime! macros/matchit.vim
