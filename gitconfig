@@ -23,3 +23,5 @@
     tool = opendiff
 [instaweb]
     httpd = webrick
+[heroku]
+	account = personal
