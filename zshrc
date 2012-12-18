@@ -22,12 +22,6 @@ alias gitx="gitx -c"
 # Remove all .DS_Store files
 alias rmds_store="find . -type f -name '.DS_Store' -exec rm {} \\;"
 
-# Alias z to zeus
-alias z="zeus"
-
-# Create new rails apps using rails-composer (https://github.com/RailsApps/rails-composer)
-alias rails_new="rails new myapp -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb -T"
-
 # tmux
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
@@ -37,6 +31,7 @@ export EDITOR=`which vim`
 # https://github.com/defunkt/hub
 eval "$(hub alias -s)"
 
+# Ruby performance improvements
 export RUBY_HEAP_MIN_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
