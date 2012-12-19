@@ -7,6 +7,7 @@ git submodule update
 echo "Deleting the old files"
 rm -f ~/.vimrc
 rm -f ~/.zshrc
+rm -f ~/.bashrc
 rm -f ~/.vim
 rm -f ~/.gitconfig
 rm -f ~/.gitignore
@@ -17,6 +18,7 @@ rm -f ~/.irbrc
 echo "Symlinking files"
 ln -s ~/Source/dotfiles/vimrc ~/.vimrc
 ln -s ~/Source/dotfiles/zshrc ~/.zshrc
+ln -s ~/Source/dotfiles/bashrc ~/.bashrc
 ln -s ~/Source/dotfiles/vim ~/.vim
 ln -s ~/Source/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/Source/dotfiles/gitignore ~/.gitignore
