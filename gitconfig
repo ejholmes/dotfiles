@@ -25,3 +25,5 @@
     httpd = webrick
 [heroku]
 	account = personal
+[push]
+	default = matching
