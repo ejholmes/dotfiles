@@ -5,14 +5,14 @@ git submodule init
 git submodule update
 
 echo "Deleting the old files"
-rm ~/.vimrc
-rm ~/.zshrc
-rm ~/.vim
-rm ~/.gitconfig
-rm ~/.gitignore
-rm ~/.tmux.conf
-rm ~/.gemrc
-rm ~/.irbrc
+rm -f ~/.vimrc
+rm -f ~/.zshrc
+rm -f ~/.vim
+rm -f ~/.gitconfig
+rm -f ~/.gitignore
+rm -f ~/.tmux.conf
+rm -f ~/.gemrc
+rm -f ~/.irbrc
 
 echo "Symlinking files"
 ln -s ~/Source/dotfiles/vimrc ~/.vimrc
