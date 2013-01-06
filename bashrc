@@ -1,10 +1,12 @@
-export PATH="/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # rbenv
 if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:/opt/local/bin:$PATH"
   eval "$(rbenv init -)"
 fi
+
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # Server a directory over HTTP
 alias served="ruby -r webrick -e \"require 'webrick/httputils'; mime_types = WEBrick::HTTPUtils::DefaultMimeTypes; mime_types.store 'mp4', 'video/mp4'; s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd, :MimeTypes => mime_types); trap('INT') { s.shutdown }; s.start\""
@@ -30,3 +32,10 @@ export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=79000000
+
+# Colors for `ls`
+export CLICOLOR=1
+export LSCOLORS=FxFxCxDxBxegedabagacad
+
+# Minimal bash prompt
+export PS1="\W \[\033[01;31m\]$\[\033[00m\] "
