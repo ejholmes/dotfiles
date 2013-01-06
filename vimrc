@@ -31,6 +31,7 @@ Bundle 'jpo/vim-railscasts-theme'
 Bundle 'b4winckler/vim-objc'
 Bundle 'oscarh/vimerl'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on
 syntax enable
@@ -93,6 +94,7 @@ set statusline+=%=                              " right align remainder
 set statusline+=0x%-8B                          " character value
 set statusline+=%-14(%l,%c%V%)                  " line, character
 set statusline+=%<%P                            " file position
+
 
 nnoremap <leader><space> :noh<cr>
 nnoremap / /\v
