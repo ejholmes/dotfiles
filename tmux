@@ -1,5 +1,5 @@
 set-option -g status on
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+set-option -g default-command "reattach-to-user-namespace -l bash"
 set -g status-bg colour234
 set -g window-status-activity-attr bold
 set -g pane-border-fg colour245
