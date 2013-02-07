@@ -9,7 +9,7 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Server a directory over HTTP
-alias served="ruby -r webrick -e \"require 'webrick/httputils'; mime_types = WEBrick::HTTPUtils::DefaultMimeTypes; mime_types.store 'mp4', 'video/mp4'; s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd, :MimeTypes => mime_types); trap('INT') { s.shutdown }; s.start\""
+alias served="python -m SimpleHTTPServer"
 
 # Open gitx in commit mode
 alias gitx="gitx -c"
