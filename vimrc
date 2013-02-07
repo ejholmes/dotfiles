@@ -191,6 +191,9 @@ if has('gui_running')
     au FileType ruby set noballooneval
 endif
 
+" HTML
+au FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " CSS
 au FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 au FileType sass setlocal shiftwidth=2 tabstop=2 softtabstop=2
