@@ -15,7 +15,7 @@ alias served="python -m SimpleHTTPServer"
 alias gitx="gitx -c"
 
 # Remove all .DS_Store files
-alias rmds_store="find . -type f -name '.DS_Store' -exec rm {} \\;"
+alias dstroy="find . -type f -name '.DS_Store' -exec rm {} \\;"
 
 # tmux
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
