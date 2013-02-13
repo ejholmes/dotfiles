@@ -32,6 +32,8 @@ Bundle 'b4winckler/vim-objc'
 Bundle 'oscarh/vimerl'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'pangloss/vim-javascript'
 
 filetype plugin indent on
 syntax enable
