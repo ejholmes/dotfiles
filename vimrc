@@ -216,6 +216,9 @@ au FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " JavaScript
 au FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" Rust
+au FileType rust inoremap <C-l> <space>=><space>
+
 " Bundle 'tsaleh/vim-matchit'
 runtime! macros/matchit.vim
 
