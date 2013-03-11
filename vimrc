@@ -34,6 +34,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'pangloss/vim-javascript'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 syntax enable
