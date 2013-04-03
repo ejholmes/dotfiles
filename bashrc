@@ -8,14 +8,18 @@ fi
 
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Server a directory over HTTP
+# Aliases
 alias served="python -m SimpleHTTPServer"
-
-# Open gitx in commit mode
 alias gitx="gitx -c"
-
-# Remove all .DS_Store files
 alias dstroy="find . -type f -name '.DS_Store' -exec rm {} \\;"
+alias be="bundle exec"
+alias rs="be rails s"
+alias fs="be foreman s"
+alias ms="be middleman s"
+alias fr="be foreman run"
+alias dbm="be rake db:migrate"
+alias dbr="be rake db:reset"
+alias dbrb="be rake db:rollback"
 
 # tmux
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
