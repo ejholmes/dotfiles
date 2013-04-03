@@ -17,7 +17,7 @@ gems_group %w(heroku heroku_san foreman), :development
 # Gems for testing
 gems_group %w(faker rspec-rails), :development, :test
 
-gems_group %w(capybara poltergeist webmock factory_girl_rails shoulda-matchers database_cleaner), :development
+gems_group %w(capybara poltergeist webmock factory_girl_rails shoulda-matchers database_cleaner), :test
 
 # Gems for making tests faster
 gems_group %w(guard-rspec guard-spork ruby_gntp rb-fsevent), :development, :test
