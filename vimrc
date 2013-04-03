@@ -217,8 +217,14 @@ au FileType jade setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " JavaScript
 au FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" Haml
+au FileType haml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " Rust
 au FileType rust inoremap <C-l> <space>=><space>
+
+" Haml.js
+au BufNewFile,BufRead *.hamljs set filetype=haml
 
 " Bundle 'tsaleh/vim-matchit'
 runtime! macros/matchit.vim
