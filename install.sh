@@ -13,6 +13,7 @@ rm -f ~/.gitignore
 rm -f ~/.tmux.conf
 rm -f ~/.gemrc
 rm -f ~/.irbrc
+rm -f ~/.psqlrc
 rm -f ~/.railsrc
 rm -f ~/.railstemplate.rb
 rm -rf ~/.js
@@ -26,6 +27,7 @@ ln -s ~/Source/dotfiles/gitignore ~/.gitignore
 ln -s ~/Source/dotfiles/tmux ~/.tmux.conf
 ln -s ~/Source/dotfiles/gemrc ~/.gemrc
 ln -s ~/Source/dotfiles/irbrc ~/.irbrc
+ln -s ~/Source/dotfiles/psqlrc ~/.psqlrc
 ln -s ~/Source/dotfiles/railsrc ~/.railsrc
 ln -s ~/Source/dotfiles/railstemplate.rb ~/.railstemplate.rb
 ln -s ~/Source/dotfiles/dotjs ~/.js
