@@ -33,8 +33,10 @@ Bundle 'oscarh/vimerl'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'vim-scripts/VimClojure'
+Bundle 'jnwhiteh/vim-golang'
 Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on
 syntax enable
