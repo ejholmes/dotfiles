@@ -8,17 +8,9 @@ set -g message-fg colour16
 set -g message-bg colour221
 set -g message-attr bold
 
-# Custom status bar
-# Powerline symbols: ⮂ ⮃ ⮀ ⮁ ⭤
-set -g status-left-length 32
-set -g status-right-length 150
-set -g status-interval 5
+set -g status-bg '#666666'
+set -g status-fg '#aaaaaa'
 
-set -g status-left '#[fg=colour238,bg=colour234,nobold]⮀'
-set -g status-right '#[fg=colour245]⮃ %R ⮃ %d %b #[fg=colour254,bg=colour234,nobold]#(rdio-current-track-tmux)⮂#[fg=colour16,bg=colour254,bold] #h '
-
-set -g window-status-format "#[fg=white,bg=colour234] #I #W "
-set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour16,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
 set -s escape-time 0
 
 set -g default-terminal "screen-256color"
