@@ -21,6 +21,10 @@ alias dbm="be rake db:migrate"
 alias dbr="be rake db:reset"
 alias dbrb="be rake db:rollback"
 
+function replace() {
+    find . -name "$1" | xargs sed -i '' -e "$2"
+}
+
 # tmux
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
