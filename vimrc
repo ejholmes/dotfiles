@@ -29,6 +29,7 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'godlygeek/tabular'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'b4winckler/vim-objc'
+Bundle 'rking/vim-detailed'
 Bundle 'oscarh/vimerl'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'derekwyatt/vim-scala'
@@ -162,7 +163,7 @@ endif
 " GVIM
 if has("gui_running")
     set background=light
-    colorscheme slate
+    colorscheme detailed
     set guioptions=egmt
     let loaded_minibufexplorer = 1
 else
