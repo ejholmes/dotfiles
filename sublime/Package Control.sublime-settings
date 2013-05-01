@@ -1,0 +1,17 @@
+{
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Alignment",
+		"ApplySyntax",
+		"AutoFileName",
+		"Backbone.js",
+		"BracketHighlighter",
+		"CoffeeScript",
+		"Color Highlighter",
+		"Haml",
+		"Package Control",
+		"Sass",
+		"SublimeBlockCursor"
+	]
+}
