@@ -16,21 +16,22 @@ rm -f ~/.irbrc
 rm -f ~/.psqlrc
 rm -f ~/.railsrc
 rm -f ~/.railstemplate.rb
+rm -f ~/.bash_profile
 rm -rf ~/.js
 
 echo "Symlinking files"
-ln -s ~/Source/dotfiles/vimrc ~/.vimrc
-ln -s ~/Source/dotfiles/bashrc ~/.bash_profile
-ln -s ~/Source/dotfiles/vim ~/.vim
-ln -s ~/Source/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/Source/dotfiles/gitignore ~/.gitignore
-ln -s ~/Source/dotfiles/tmux ~/.tmux.conf
-ln -s ~/Source/dotfiles/gemrc ~/.gemrc
-ln -s ~/Source/dotfiles/irbrc ~/.irbrc
-ln -s ~/Source/dotfiles/psqlrc ~/.psqlrc
-ln -s ~/Source/dotfiles/railsrc ~/.railsrc
-ln -s ~/Source/dotfiles/railstemplate.rb ~/.railstemplate.rb
-ln -s ~/Source/dotfiles/dotjs ~/.js
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/bashrc ~/.bash_profile
+ln -s $PWD/vim ~/.vim
+ln -s $PWD/gitconfig ~/.gitconfig
+ln -s $PWD/gitignore ~/.gitignore
+ln -s $PWD/tmux ~/.tmux.conf
+ln -s $PWD/gemrc ~/.gemrc
+ln -s $PWD/irbrc ~/.irbrc
+ln -s $PWD/psqlrc ~/.psqlrc
+ln -s $PWD/railsrc ~/.railsrc
+ln -s $PWD/railstemplate.rb ~/.railstemplate.rb
+ln -s $PWD/dotjs ~/.js
 
 echo "Updating submodules"
 git submodule foreach git pull origin master --recurse-submodules
