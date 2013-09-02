@@ -48,4 +48,5 @@ export LSCOLORS=FxFxCxDxBxegedabagacad
 # Minimal bash prompt
 export PS1="\W \[\033[01;31m\]$\[\033[00m\] "
 
-source /opt/boxen/env.sh
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
