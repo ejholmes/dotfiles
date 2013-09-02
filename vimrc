@@ -38,6 +38,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'elixir-lang/vim-elixir'
 
 filetype plugin indent on
 syntax enable
@@ -152,7 +153,7 @@ if has("gui_macvim")
     nnoremap <tab> :tabnext<cr>
     nnoremap <s-tab> :tabprevious<cr>
     cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabe' : 'e')<cr>
-    set guifont=Source\ Code\ Pro:h14
+    set guifont=Source\ Code\ Pro:h16
     set linespace=3
 else
     nnoremap <tab> :bnext<cr>
@@ -228,6 +229,7 @@ au FileType rust inoremap <C-l> <space>=><space>
 
 " Haml.js
 au BufNewFile,BufRead *.hamljs set filetype=haml
+au BufNewFile,BufRead *.hamlbars set filetype=haml
 
 " Bundle 'tsaleh/vim-matchit'
 runtime! macros/matchit.vim
