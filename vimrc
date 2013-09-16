@@ -39,6 +39,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'slim-template/vim-slim'
 
 filetype plugin indent on
 syntax enable
