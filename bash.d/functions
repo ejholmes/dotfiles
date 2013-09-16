@@ -1,0 +1,3 @@
+function replace() {
+    find . -name "$1" | xargs sed -i '' -e "$2"
+}

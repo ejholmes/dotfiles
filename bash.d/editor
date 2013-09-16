@@ -1,0 +1,2 @@
+# Use vim as editor
+export EDITOR=`which vim`

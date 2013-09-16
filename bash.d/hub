@@ -1,0 +1,2 @@
+# https://github.com/defunkt/hub
+eval "$(hub alias -s)"
