@@ -39,6 +39,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'slim-template/vim-slim'
 
 filetype plugin indent on
@@ -154,7 +155,7 @@ if has("gui_macvim")
     nnoremap <tab> :tabnext<cr>
     nnoremap <s-tab> :tabprevious<cr>
     cabbrev e <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'tabe' : 'e')<cr>
-    set guifont=Source\ Code\ Pro:h16
+    set guifont=Source\ Code\ Pro:h14
     set linespace=3
 else
     nnoremap <tab> :bnext<cr>
@@ -165,7 +166,8 @@ endif
 " GVIM
 if has("gui_running")
     set background=light
-    colorscheme detailed
+    "colorscheme detailed
+    colorscheme Tomorrow
     set guioptions=egmt
     let loaded_minibufexplorer = 1
 else
