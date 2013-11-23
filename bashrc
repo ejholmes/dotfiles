@@ -16,4 +16,4 @@ export LSCOLORS=FxFxCxDxBxegedabagacad
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-source $HOME/.bash.d/*
+for f in $HOME/.bash.d/*; do source $f; done

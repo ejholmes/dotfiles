@@ -166,11 +166,11 @@ endif
 " GVIM
 if has("gui_running")
     set background=light
-    "colorscheme detailed
     colorscheme Tomorrow
     set guioptions=egmt
     let loaded_minibufexplorer = 1
 else
+    colorscheme Tomorrow-Night-Bright
 endif
 
 " Bundle 'scrooloose/nerdcommenter'
