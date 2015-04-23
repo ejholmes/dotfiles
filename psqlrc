@@ -16,6 +16,7 @@
 \echo 'Administrative queries:\n'
 \echo '\t:settings\t-- Server Settings'
 \echo '\t:ps\t\t-- Show running queries'
+\echo '\t:locks\t\t-- Show locks and how long they have been locked'
 \echo '\t:conninfo\t-- Server connections'
 \echo '\t:activity\t-- Server activity'
 \echo '\t:dbsize\t\t-- Database Size'
@@ -23,6 +24,9 @@
 \echo '\t:uptime\t\t-- Server uptime'
 \echo '\t:cachehit\t-- Cache hit ratio'
 \echo '\t:indexusage\t-- Index usage'
+\echo '\t:indexsize\t-- Index sizes'
+\echo '\t:indextotal\t-- Total size of all indexes'
+\echo '\t:outliers\t-- Slowest queries from pg_stat_statements'
 \echo '\t:menu\t\t-- Help Menu'
 \echo '\t\\h\t\t-- Help with SQL commands'
 \echo '\t\\?\t\t-- Help with psql commands\n'
@@ -42,7 +46,9 @@
 
 \set settings 'select name, setting,unit,context from pg_settings;'
 
-\set ps 'SELECT procpid, application_name AS source, age(now(),xact_start) AS running_for, waiting, current_query AS query FROM pg_stat_activity WHERE current_query <> \'<insufficient privilege>\' AND current_query <> \'<IDLE>\' AND procpid <> pg_backend_pid() ORDER BY query_start DESC;'
+\set ps 'SELECT pid, state, application_name AS source, age(now(),xact_start) AS running_for, waiting, query FROM pg_stat_activity WHERE query <> \'<insufficient privilege>\' AND state <> \'idle\' AND pid <> pg_backend_pid() ORDER BY query_start ASC;'
+
+\set locks 'SELECT a.datname, c.relname, l.transactionid, l.mode, l.granted, a.usename, a.query, a.query_start, age(now(), a.query_start) AS "age", a.pid FROM  pg_stat_activity a JOIN pg_locks l ON l.pid = a.pid JOIN pg_class c ON c.oid = l.relation ORDER BY a.query_start;'
 
 \set conninfo 'select usename, count(*) from pg_stat_activity group by usename;'
 
@@ -57,6 +63,14 @@
 \set cachehit 'SELECT \'index hit rate\' AS name, (sum(idx_blks_hit)) / sum(idx_blks_hit + idx_blks_read) AS ratio FROM pg_statio_user_indexes UNION ALL SELECT \'table hit rate\' AS name, sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) AS ratio FROM pg_statio_user_tables;'
 
 \set indexusage 'SELECT relname, CASE idx_scan WHEN 0 THEN \'Insufficient data\' ELSE (100 * idx_scan / (seq_scan + idx_scan))::text END percent_of_times_index_used, n_live_tup rows_in_table FROM pg_stat_user_tables ORDER BY n_live_tup DESC;'
+
+\set indexsize 'SELECT c.relname AS name, pg_size_pretty(sum(c.relpages::bigint*8192)::bigint) AS size FROM pg_class c LEFT JOIN pg_namespace n ON (n.oid = c.relnamespace) WHERE n.nspname NOT IN (\'pg_catalog\', \'information_schema\') AND n.nspname !~ \'^pg_toast\' AND c.relkind=\'i\' GROUP BY c.relname ORDER BY sum(c.relpages) DESC;'
+
+\set totalindexsize 'with sizes as ( SELECT sum(c.relpages::bigint*8192)::bigint AS size FROM pg_class c LEFT JOIN pg_namespace n ON (n.oid = c.relnamespace) WHERE n.nspname NOT IN (\'pg_catalog\', \'information_schema\') AND n.nspname !~ \'^pg_toast\' AND c.relkind=\'i\' GROUP BY c.relname ORDER BY sum(c.relpages) DESC) select pg_size_pretty(sum(size)) as total_index_size from sizes;'
+
+\set lastvacuum 'select relname, last_vacuum, last_analyze from pg_stat_all_tables where schemaname = \'public\';'
+
+\set outliers 'SELECT query AS qry, concat((total_time / calls), \' ms\') as avg_time, interval \'1 millisecond\' * total_time AS exec_time, to_char((total_time/sum(total_time) OVER()) * 100, \'FM90D0\') || \'%\'  AS prop_exec_time, to_char(calls, \'FM999G999G990\') AS ncalls, interval \'1 millisecond\' * (blk_read_time + blk_write_time) AS sync_io_time FROM pg_stat_statements WHERE userid = (SELECT usesysid FROM pg_user WHERE usename = current_user LIMIT 1) ORDER BY total_time DESC LIMIT 10;'
 
 -- Development queries:
 
