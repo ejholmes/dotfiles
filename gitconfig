@@ -9,6 +9,7 @@
     ; Get a summary of yesterday commits. Useful for Scrum standup.
     standup  = "!git log --since yesterday --author `git config user.email` --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     st = status
+    g = grep --break --heading --line-number
 [user]
     name = Eric J. Holmes
     email = eric@ejholmes.net
@@ -33,3 +34,5 @@
 	default = matching
 [branch]
 	autosetuprebase = always
+[grep]
+	lineNumber = true
