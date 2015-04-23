@@ -1,9 +1,12 @@
-export PATH="$HOME/.bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export POW_DOMAINS="remind101.dev,dev,ejholmes.ngrok.com"
 
-export PATH="/usr/local/heroku/bin:$PATH"
+export GOROOT=`go env GOROOT`
+export GOPATH="$HOME/go"
+
+export PATH="$GOPATH/bin:$GOROOT/bin:$HOME/.bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Ruby performance improvements
-export RUBY_HEAP_MIN_SLOTS=800000
+export RUBY_GC_HEAP_INIT_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
