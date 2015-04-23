@@ -1,3 +1,9 @@
 function replace() {
     find . -name "$1" | xargs sed -i '' -e "$2"
 }
+
+function reset_rabbitmq() {
+    rabbitmqctl stop_app
+    rabbitmqctl reset
+    rabbitmqctl start_app
+}
