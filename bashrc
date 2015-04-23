@@ -17,3 +17,5 @@ export LSCOLORS=FxFxCxDxBxegedabagacad
 export PATH="/usr/local/heroku/bin:$PATH"
 
 for f in $HOME/.bash.d/*; do source $f; done
+
+set -o vi
