@@ -15,12 +15,19 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-cucumber'
+Bundle 'kien/ctrlp.vim'
+
+" Snipmate
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 
 " Syntax
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 
 " ========
 " Settings
@@ -103,6 +110,9 @@ nmap <leader>ri 1G=G
 " Close the current buffer
 nnoremap <leader>d :bdelete<cr>
 
+" This is just annoying.
+nnoremap K <NOP>
+
 " Set tab character to cycle buffers in normal mode
 if has("gui_macvim")
   nnoremap <tab> :tabnext<cr>
@@ -115,3 +125,20 @@ endif
 " Make -- trigger toggling of comments
 nmap -- <plug>NERDCommenterToggle
 vmap -- <plug>NERDCommenterToggle
+
+" Cucumber
+au FileType cucumber setlocal shiftwidth=4 tabstop=4 softtabstop=4
+
+" Go
+au FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8 textwidth=80 noexpandtab nolist
+let g:go_fmt_command = "goimports"
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
+" ctrp
+" let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py|node_modules|_workspace'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
