@@ -17,6 +17,31 @@ set -s escape-time 0
 
 set -g default-terminal "screen-256color"
 
+# start selecting text typing 'v' key (once you are in copy mode)
+bind-key -t vi-copy v begin-selection
+# copy selected text to the system's clipboard
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Status bar
+# colors
+set -g status-bg black
+set -g status-fg white
+
+# alignment
+set-option -g status-justify centre
+
+# spot at left
+set-option -g status-left '#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]'
+set-option -g status-left-length 20
+
+# window list
+setw -g automatic-rename on
+set-window-option -g window-status-format '#[dim]#I:#[default]#W#[fg=grey,dim]'
+set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]'
+
+# spot at right
+set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
+
 # Activity
 setw -g monitor-activity on
 set -g visual-activity off
