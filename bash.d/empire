@@ -1,0 +1,2 @@
+alias bastion="ssh ec2-54-85-173-103.compute-1.amazonaws.com"
+alias emp-staging="HEROKU_API_URL=https://empire.classchirp.com hk"
