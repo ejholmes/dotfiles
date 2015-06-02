@@ -1,7 +1,7 @@
 export POW_DOMAINS="remind101.dev,dev,ejholmes.ngrok.com"
 
 export GOROOT=`go env GOROOT`
-export GOPATH="$HOME/go"
+export GOPATH="$HOME"
 
 export PATH="$GOPATH/bin:$GOROOT/bin:$HOME/.bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
