@@ -14,6 +14,8 @@ brew 'go'
 
 # Databases
 brew 'postgresql'
+brew 'mongodb'
+brew 'redis'
 
 # Applications
 cask 'dropbox'
