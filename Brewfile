@@ -7,6 +7,7 @@ tap 'caskroom/cask'
 brew 'vim'
 brew 'tmux'
 brew 'jq'
+brew 'heroku-toolbelt'
 
 # Languages
 brew 'rbenv'
