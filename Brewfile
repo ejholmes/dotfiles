@@ -6,6 +6,7 @@ tap 'caskroom/cask'
 # Utilities
 brew 'vim'
 brew 'tmux'
+brew 'jq'
 
 # Languages
 brew 'rbenv'
