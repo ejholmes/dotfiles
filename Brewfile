@@ -8,6 +8,7 @@ brew 'vim'
 brew 'tmux'
 brew 'jq'
 brew 'heroku-toolbelt'
+brew 'irssi'
 
 # Languages
 brew 'rbenv'
