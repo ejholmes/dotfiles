@@ -9,6 +9,8 @@ brew 'tmux'
 brew 'jq'
 brew 'heroku-toolbelt'
 brew 'irssi'
+brew 'ngrok'
+brew 'ansible'
 
 # Languages
 brew 'rbenv'

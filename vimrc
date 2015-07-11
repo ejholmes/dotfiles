@@ -30,6 +30,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'fatih/vim-go'
 Bundle 'raichoo/haskell-vim'
 Bundle 'evanmiller/nginx-vim-syntax'
+Bundle 'ekalinin/Dockerfile.vim'
 
 " Themes
 Bundle 'zenorocha/dracula-theme', {'rtp': 'vim/'}
