@@ -1,6 +1,4 @@
 [alias]
-    export = !sh -c 'git diff $0 --name-only | "while read files; do mkdir -p \"$1/$(dirname $files)\"; cp -vf $files $1/$(dirname $files); done"'
-    changes = diff --name-status
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
     ; Delete all local branches that have been merged into master
@@ -10,9 +8,11 @@
     standup  = "!git log --since yesterday --author `git config user.email` --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
     st = status
     g = grep --break --heading --line-number
+    a = commit --amend
 [user]
     name = Eric J. Holmes
     email = eric@ejholmes.net
+    signingkey = B3271752
 [color]
     diff = auto
     interactive = auto
@@ -36,3 +36,5 @@
 	autosetuprebase = always
 [grep]
 	lineNumber = true
+[commit]
+	gpgsign = true

@@ -7,3 +7,17 @@ function reset_rabbitmq() {
     rabbitmqctl reset
     rabbitmqctl start_app
 }
+
+function uuid() {
+    ruby -r securerandom -e 'print SecureRandom.uuid + "\n"'
+}
+
+function today() {
+  (cd $HOME/src/github.com/ejholmes/journal && exec make today)
+}
+
+function yesterday() {
+  (cd $HOME/src/github.com/ejholmes/journal && exec make yesterday)
+}
+
+# vim: filetype=sh

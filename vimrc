@@ -31,6 +31,10 @@ Bundle 'fatih/vim-go'
 Bundle 'raichoo/haskell-vim'
 Bundle 'evanmiller/nginx-vim-syntax'
 Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'markcornick/vim-terraform'
+Bundle 'robbles/logstash.vim'
+Bundle 'uarun/vim-protobuf'
+Bundle 'cespare/vim-toml'
 
 " Themes
 Bundle 'zenorocha/dracula-theme', {'rtp': 'vim/'}
@@ -43,6 +47,9 @@ filetype plugin indent on
 
 " Enable syntax highlighting
 syntax enable
+
+" Don't enable mouse support in neovim
+set mouse=
 
 " Don't show line numbers in the gutter
 set nonumber
@@ -122,6 +129,12 @@ nnoremap <leader>d :bdelete<cr>
 " This is just annoying.
 nnoremap K <NOP>
 
+" Better window moving.
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Set tab character to cycle buffers in normal mode
 if has("gui_macvim")
   nnoremap <tab> :tabnext<cr>
@@ -140,7 +153,15 @@ au FileType cucumber setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Go
 au FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8 textwidth=80 noexpandtab nolist
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>f <Plug>(go-test-func)
 let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_jump_to_error = 0
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " ctrp

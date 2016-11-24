@@ -1,2 +1,3 @@
-alias bastion="ssh ec2-54-85-173-103.compute-1.amazonaws.com"
-alias emp-staging="HEROKU_API_URL=https://empire.classchirp.com hk"
+alias emp-staging="EMPIRE_API_URL=https://empire.classchirp.com emp"
+alias emp-prod="EMPIRE_API_URL=https://empire.remind.com emp"
+alias bastion-access="assume-role prod sign_key -u ejholmes -e stage -t +48h"

@@ -11,6 +11,8 @@ brew 'heroku-toolbelt'
 brew 'irssi'
 brew 'ngrok'
 brew 'ansible'
+brew 'packer'
+brew 'bats'
 
 # Languages
 brew 'rbenv'
@@ -31,3 +33,4 @@ cask 'things'
 cask 'vagrant'
 cask 'transmission'
 cask 'colloquy'
+cask 'vlc'
